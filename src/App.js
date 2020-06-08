@@ -1,8 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  // fetch("/pokemon")
+  //   .then((e) => e.json())
+  //   .then((e) => console.log(e));
+
   return (
     <div className="App">
       <header className="App-header">
