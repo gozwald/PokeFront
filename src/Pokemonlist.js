@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -16,9 +17,13 @@ export default function PokemonList({ list }) {
 
   return (
     <>
-      <Grid item xs={1}>
-        <Paper className={classes.paper}>{list.name.english} </Paper>
-      </Grid>
+      {list && (
+        <Grid item xs={3}>
+          <Link to={`/${list.id}`}>
+            <Paper className={classes.paper}>{list.name.english} </Paper>
+          </Link>
+        </Grid>
+      )}
     </>
   );
 }
