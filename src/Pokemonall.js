@@ -7,7 +7,7 @@ export default function Pokemonall({ pokeList }) {
   return (
     <Container maxWidth="lg">
       <Grid container spacing={1}>
-        <Grid container item xs={12} spacing={1}>
+        <Grid container xs={12} spacing={1}>
           {pokeList &&
             pokeList.map((item, index) => (
               <PokemonList key={index} list={item} />

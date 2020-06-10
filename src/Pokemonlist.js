@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
     padding: theme.spacing(3),
     textAlign: "center",
     color: theme.palette.text.secondary,
@@ -19,8 +22,16 @@ export default function PokemonList({ list }) {
     <>
       {list && (
         <Grid item xs={3}>
-          <Link to={`/${list.id}`}>
-            <Paper className={classes.paper}>{list.name.english} </Paper>
+          <Link style={{ textDecoration: "none" }} to={`/${list.id}`}>
+            <Paper className={classes.paper}>
+              {" "}
+              <img
+                alt=""
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${list.id}.png`}
+                width={"60%"}
+              />
+              <span>{list.name.english}</span>
+            </Paper>
           </Link>
         </Grid>
       )}
